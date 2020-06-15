@@ -1,12 +1,13 @@
 //Import a global module
 const http = require('http');
-
+const fs = require('fs');
 //create a server, pamater will be a function that have two params req,res 
 //If the server receives a request, then execute the function
 
 //res.end : ends the response crafting process and at this point send back response to user
 const server = http.createServer((req, res) => {
     const url = req.url;
+    const method = req.method;
     if (url === "/"){
         res.write("<html>");
         res.write("<header><title>Message</title></header>");
@@ -14,6 +15,14 @@ const server = http.createServer((req, res) => {
         res.write("</html>");
         //return res.end so it wont execute following code after res.end
         return res.end();
+    }
+
+    if(url === "/message" && method === "POST"){
+        fs.writeFileSync('message.text', "SUMMY");
+        res.statusCode = 302; //Code for redirection
+        // res.setHeader('Location', '/'); //where we redirect
+        res.writeHead(302, {Location: '/'});
+         return res.end();
     }
     res.setHeader('Content-Type','text/html');
     res.write("<html>");
