@@ -26,17 +26,23 @@ const server = http.createServer((req, res) => {
             console.log(body); //[ <Buffer 6d 65 73 73 61 67 65 3d 48 65 6c 6c 6f> ]
         })
         //event 'end' is fired when the data is fully parsed from the incoming request
-        req.on('end', () =>{
+        //return req.on so the code after if wont be executed
+        return req.on('end', () =>{
             const parsedBody = Buffer.concat(body).toString(); 
             console.log(parsedBody); //message=Hello
             const message = parsedBody.split('=')[1];
-            fs.writeFileSync('message.text', message);
-            return res.end();
+            //It is a good practice to write non-block code so the app has high performance
+            // fs.writeFileSync('message.text', message);
+
+            fs.writeFile('message.txt', message, err => {
+                res.writeHead(302, {Location: '/'});
+                return res.end();
+            })
+            
         })
         // res.statusCode = 302; //Code for redirection
         // res.setHeader('Location', '/'); //where we redirect
-        res.writeHead(302, {Location: '/'});
-        return res.end();
+        
     }
     res.setHeader('Content-Type','text/html');
     res.write("<html>");
