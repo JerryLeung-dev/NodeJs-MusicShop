@@ -3,8 +3,17 @@ const http = require('http');
 
 //create a server, pamater will be a function that have two params req,res 
 //If the server receives a request, then execute the function
+
+//res.end : ends the response crafting process and at this point send back response to user
 const server = http.createServer((req, res) => {
     console.log(req);
+    res.setHeader('Content-Type','text/html');
+    res.write("<html>");
+    res.write("<header><title>Hello world</title></header>");
+    res.write("<body></body>");
+    res.write("</html>");
+    res.end();
+
 })
 
 //server not executing the script immediately but listen to request
