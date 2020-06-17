@@ -4,8 +4,17 @@ const http = require('http');
 const express = require('express'); //return a function
 
 const app = express(); //execute the function which then return many logics 
-//create a server, pamater will be a function that have two params req,res 
-//If the server receives a request, then execute the function
+//uses a middleware, receives req, res, and next as parameters
+app.use((req,res,next) => {
+    console.log("middleware A");
+    next();
+});
+
+app.use((req,res,next) => {
+    console.log("middleware B");
+});
+
+
 
 //res.end : ends the response crafting process and at this point send back response to user
 const server = http.createServer(app);
