@@ -1,28 +1,17 @@
 //Import a global module
-const http = require('http');
-
-
 const express = require('express'); //return a function
 const bodyParser = require('body-parser'); //a third-party library to parse incoming request
+
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
 
 const app = express(); //execute the function which then return many logics 
 //uses a middleware, receives req, res, and next as parameters
 
 app.use(bodyParser.urlencoded({extended: false})); // return a decoded coming request and a next() function
 
-app.use('/add-product',(req, res, next) => {
-    res.send('<html><form method="POST" action="/product"><h1>Add product</h1><input type="text" name="product"/><button type="submit">Add</button</form></html>');
-});
-
-app.use('/product', (req,res,next) => {
-    console.log(req.body);
-    res.redirect('/');
-})
-
-app.use('/', (req, res, next) => {
-    //default content-type is text/html, which is set automatically by Express
-    res.send('<h1>Hello</h1>');
-});
+app.use(adminRoutes);
+app.use(shopRoutes);
 
 
 
