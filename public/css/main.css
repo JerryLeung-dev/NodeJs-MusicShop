@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family:'Poppins';
+
+    box-sizing: border-box;
+    
+}
+
+:root {
+    --white: rgb(242, 239, 255);
+    --light-blue: rgba(11, 7, 27, 0.918);
+    --deep-blue: rgba(17, 4, 32, 0.877);
+    --pink: rgba(234, 25, 130, 0.87);
+}
+
+body {
+    height: 100vh;
+    background-color: var(--light-blue) ;
+}
+
+.nav-bar{
+    width:100%;
+}
+.nav-bar > ul {
+    display: flex;
+    align-items: center;
+
+    height:10vh;
+    padding: 0;
+    margin: 0;
+
+    list-style-type: none;
+}
+
+.nav-bar ul > li {
+    padding: 3px 5px;
+    margin-left: 10px;
+
+    /* background-color: transparent;
+    border: 1px solid var(--white);
+    border-radius: 5px; */
+}
+
+.nav-bar__item > a {
+    color: var(--white);
+
+    text-decoration: none;
+}
+
+.nav-bar__item a:active,
+.nav-bar__item a:hover,
+.nav-bar__item a.active {
+    color: var(--pink);
+}
+
+
+main {
+    width:80%;
+    margin: 5vh auto 0;
+
+    color: var(--white);
+}
+
+/* ____SHOP_____ */
+.shop-content__title {
+    text-align:center;
+}
+
+.shop-content__list-name {
+    font-weight: lighter;
+    margin-top:5vh;
+}
+
+/* ___ADD PRODUCT FORM */
+.add-product-content__title {
+    text-align:center;
+}
+.add-product-content__form {
+    margin-top:5vh;
+    width:100%;
+    height: 80vh;
+
+    text-align: center;
+}
+input.add-product-content__form-input  {
+    
+    height: 35px;
+    padding-left: 10px;
+    margin: auto;
+
+    display:block;
+    width: 60%;
+
+    border-radius: 2px;
+    border-style:none;
+    outline:none;
+
+    background-color: var(--white);
+}
+
+input.add-product-content__form-input:focus {
+    box-shadow: 2px 2px 3px rgba(90, 90, 230, 0.863);
+}
+
+button.add-product-content__form-button {
+    margin-top: 5vh;
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+
+    background-color: var(--pink);
+    color:var(--white);
+
+    font-weight: 600;
+
+}
+
+button.add-product-content__form-button:hover,
+button.add-product-content__form-button:active {
+    background-color: rgb(234, 25, 130);
+}

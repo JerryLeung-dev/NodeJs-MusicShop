@@ -1,10 +1,15 @@
+const path = require('path');
+
 const express = require('express');
 
 const router = express.Router();
+const rootDir = require('../util/path');
+
 
 router.get('/', (req, res, next) => {
     //default content-type is text/html, which is set automatically by Express
-    res.send('<h1>Hello</h1>');
+    res.sendFile(path.join(rootDir, 'views', 'shop.html'));
+    console.log("Running /");
 });
 
 module.exports = router;
