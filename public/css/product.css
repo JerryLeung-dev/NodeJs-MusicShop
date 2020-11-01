@@ -1,0 +1,9 @@
+/* ____SHOP_____ */
+.shop-content__title {
+    text-align:center;
+}
+
+.shop-content__list-name {
+    font-weight: lighter;
+    margin-top:5vh;
+}

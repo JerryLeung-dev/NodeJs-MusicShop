@@ -1,0 +1,40 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Musha
+  link(rel='stylesheet' href='/css/main.css')
+  link(rel='stylesheet' href='/css/product.css')
+  link(rel='stylesheet' href='/css/cards.css')
+  link(rel='icon' type='image/png' sizes='32x32' href='/assets/favicon-32x32.png')
+  link(rel='icon' type='image/png' sizes='16x16' href='/assets/favicon-16x16.png')
+header
+  nav.nav-bar
+    .nav-bar__logo
+      img(src='/assets/logo.png' alt='Website Logo')
+      h1.nav-bar__brand
+        | Mu
+        span.nav-bar__brand--emphasize sha
+    ul.nav-bar__list
+      li.nav-bar__item
+        a.active(href='/') Music Albums
+      li.nav-bar__item
+        a(href='/admin/add-product') Add Album
+main.shop-content
+  h1.shop-content__title Music Albums
+  h2.shop-content__list-name Popular Albums
+  .grid
+      if prods.length > 0
+        .album-gallery
+          each prod in prods
+            .card
+              .card__image
+                img(src="/assets/card-image-sample.jpg", alt="Sample card image")
+              .card__content
+                h1.card__title #{prod.albumName}
+                p.card__publisher Publisher
+                p.card__genre METAL
+                p.card__author BY Michael James
+      else
+        h1 No Album Found!
+

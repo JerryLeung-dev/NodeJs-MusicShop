@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
+    <title>Musha</title>
     <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
 </head>
 <body>
     <header>
-        <nav class="nav-bar"> 
+        <nav class="nav-bar">
+            <div class="nav-bar__logo">
+                <img src="/assets/logo.png" alt="Website Logo"/>
+                <h1 class="nav-bar__brand">Mu<span class="nav-bar__brand--emphasize">sha</span></h1>
+            </div>  
             <ul class="nav-bar__list">
-                <li class="nav-bar__item"><a href="/">Shop</a></li>
-                <li class="nav-bar__item"><a href="/admin/add-product">Add Product</a></li>
+                <li class="nav-bar__item"><a href="/" class="active">Music Albums</a></li>
+                <li class="nav-bar__item"><a href="/admin/add-product">Add Album</a></li>
             </ul>
         </nav>
     </header>

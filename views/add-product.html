@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop App</title>
+    <title>Musha</title>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/forms.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
     <style>
         
     </style>
 </head>
 <body>
     <header>
-        <nav class="nav-bar"> 
+        <nav class="nav-bar">
+            <div class="nav-bar__logo">
+                <img src="/assets/logo.png" alt="Website Logo"/>
+                <h1 class="nav-bar__brand">Mu<span class="nav-bar__brand--emphasize">sha</span></h1>
+            </div>  
             <ul class="nav-bar__list">
-                <li class="nav-bar__item"><a href="/" class="active">Shop</a></li>
-                <li class="nav-bar__item"><a href="/admin/add-product">Add Product</a></li>
+                <li class="nav-bar__item"><a href="/" class="active">Music Albums</a></li>
+                <li class="nav-bar__item"><a href="/admin/add-product">Add Album</a></li>
             </ul>
         </nav>
     </header>
     <main class="add-product-content">
-        <h1 class="add-product-content__title">Add a product</h1>
+        <h1 class="add-product-content__title">Add an album</h1>
         <form  class="add-product-content__form" action="/admin/product" method="POST">
-            <input class="add-product-content__form-input" type="text" width= "300px" name="product" />
-            <button class="add-product-content__form-button" type="submit">Add product</button>
+            <input class="add-product-content__form-input" type="text" width= "300px" name="albumName" />
+            <button class="add-product-content__form-button" type="submit">Add</button>
         </form>
         
     </main>
